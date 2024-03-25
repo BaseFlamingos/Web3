@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Flamingos</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-JYIMss3tC1OH1P8ZIUczq2iF2u7oyr2K41rgvhvm37vjFp/vSUXz+rzxT25PzBZafXZlmT08rcHRc8t4Sy4Ocg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  
+<!-- Preloader -->
+<div id="preloader">
+    <div id="loader"></div>
+    <h1 class="preloader-text">Loading...</h1>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="container">
+        <a href="#home" class="logo"><img src="logo.png" alt="Website Logo"></a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#home">About</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="marquee">
+    <div class="marquee-content">
+        5,555 Flamingo Base Ready to Launch.
+    </div>
+</div>
+
+<!-- Video Background -->
+<video autoplay muted loop id="video-background">
+    <source src="vid2.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+</video>
+
+
+<!-- Content -->
+<div class="content" id="home">
+    <div class="feature-box">
+      <h1>WHERE CREATIVITY AND STRATEGY FLOOCK TOGETHER!!</h1>
+        <p>
+          5,555 Base Flamingos on Base to Collect and Trade.
+        </p>
+        <p>
+          Contract ERC721:
+        </p>
+        <p>
+          Contract ERC20:
+        </p>
+        <button class="cta-button" onclick="connectWallet()">Connect Wallet</button>
+        <p id="connectedAddress"></p>
+        <!-- Add more content here -->
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="content" id="features">
+    <div class="container">
+      <div class="feature-box">
+        <h2>About & Missions</h2>
+        <div class="features-container">
+            <div class="feature">
+                <i class="fas fa-check-circle"></i>
+                <h3>About</h3>
+                <p>Base Flamingos is a project aimed at bringing a unique experience to collectors in the blockchain world. We are committed to creating a friendly and innovative environment for ERC721 holders to leverage their ownership within our ecosystem.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-check-circle"></i>
+                <h3>Missions</h3>
+                <p>Our mission is to introduce exclusive and captivating digital collections, where each Base Flamingo has its own unique characteristics. We believe that digital art is a form of expression that combines creativity and technology, and we are proud to be part of this movement.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-check-circle"></i>
+                <h3>Missions</h3>
+                <p>By providing ERC20 services connected to ERC721 ownership, we open up opportunities for Base Flamingos holders to access additional benefits and expand their collecting experience.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<body>
+    <!-- Konten utama -->
+    <div class="main-content">
+        <!-- Isi konten -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Base Flamingos. All rights reserved.</p>
+    </footer>
+</body>
+
+
+<!-- JavaScript -->
+<script>
+    // Function to connect the wallet
+    async function connectWallet() {
+        if (window.ethereum) {
+            try {
+                const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                const address = accounts[0];
+                document.getElementById('connectedAddress').innerText = `Connected: ${address}`;
+                document.getElementById('connectButton').style.display = 'none'; // Hide connect button after connected
+            } catch (error) {
+                console.error('Error connecting wallet:', error);
+                alert('Failed to connect wallet. Please try again later.');
+            }
+        } else {
+            alert('This browser does not support Ethereum wallet connection.');
+        }
+    }
+   
+    // Hide preloader after 3 seconds
+    setTimeout(function() {
+        document.getElementById('preloader').style.display = 'none';
+    }, 3000); // 3000 milliseconds = 3 seconds
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+                
+            });
+        });
+    });
+    
+    // Ambil elemen footer
+const footer = document.querySelector('.footer');
+
+// Tentukan posisi awal scrollbar
+let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+// Fungsi untuk menentukan apakah scroll naik atau turun
+function handleScroll() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        // Scroll turun, sembunyikan footer
+        footer.classList.add('hidden');
+    } else {
+        // Scroll naik, tampilkan footer
+        footer.classList.remove('hidden');
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+}
+
+// Tambahkan event listener untuk event scroll
+window.addEventListener('scroll', handleScroll);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,351 @@
+@font-face {
+  font-family: myFont;
+  src: url('Exo-Regular.otf') format('opentype');
+}
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif, "myFont";
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: transparent;
+  padding: 20px 0;
+  overflow: hidden; /* Clear any floats */
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between; /* Space items evenly */
+  align-items: center;
+}
+
+.logo {
+    width: 100px; /* Sesuaikan dengan lebar yang diinginkan */
+    height: auto; /* Biarkan tinggi menyesuaikan proporsi */
+}
+
+.logo img {
+  width: 70px;
+  height: auto;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  display: inline-block;
+  margin-left: 20px; /* Adjust spacing between links */
+}
+
+.nav-links li:first-child {
+  margin-left: 0; /* Remove margin from the first link */
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-family: myFont;
+}
+
+.nav-links li a:hover {
+  background-color: #555;
+}
+
+.content .cta-button {
+    margin-top: 20px; /* Tambahkan margin di bagian atas tombol */
+}
+
+.cta-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: myFont;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  order: 3; /* Change the order to appear on the right */
+}
+
+.cta-button:hover {
+  background-color: black;
+}
+
+/* Video Background styles */
+#video-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  z-index: -100;
+  background-size: cover;
+}
+
+.feature-box {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px auto; /* Menengahkan kotak */
+    max-width: 600px; /* Atur lebar maksimum kotak */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan */
+}
+
+.feature-box .box-content {
+    padding: 10px; /* Menyesuaikan padding di dalam box */
+}
+
+.feature-box h2 {
+    margin-bottom: 20px; /* Menambahkan ruang antara judul dan konten */
+    margin-top: 20px;
+}
+
+.features-container {
+    margin-top: 20px; /* Mendekatkan jarak antara judul dan kotak fitur */
+}
+
+
+/* Content styles */
+.content {
+  padding: 100px 0;
+  text-align: center;
+  font-family: myFont;
+  font-weight: bold;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+  font-family: myFont;
+}
+
+.cta-button {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-family: myFont;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  order: 3; /* Change the order to appear on the right */
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+#about {
+    margin-bottom: 5px; /* Adjust the margin bottom as needed */
+}
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Warna latar belakang footer */
+    color: black; /* Warna teks */
+    text-align: center;
+    padding: 20px;
+    transition: bottom 0.3s ease; /* Efek transisi saat footer muncul */
+}
+
+.footer.hidden {
+    bottom: -100px; /* Menyembunyikan footer di luar layar */
+}
+
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icon {
+  display: inline-block;
+  margin-right: 10px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Preloader styles */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: pulseBackground 2s ease-in-out infinite; /* Apply animation */
+}
+
+@keyframes pulseBackground {
+  0% { background-color: #ECE307; }
+  20% { background-color: #B09D66; } /* Change to a lighter shade */
+  30% { background-color: #22509B; }
+  50% { background-color: #4B53B0; }
+  100% { background-color: #7457C5; }
+}
+
+#loader {
+  border: 16px solid black; /* Light grey */
+  border-top: 16px solid white; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite, changeColor 8s ease-in-out infinite; /* Combine animations */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes changeColor {
+  0% { border-top-color: #ECE307; }
+  20% { border-top-color: #B09D66; }
+  30% { border-top-color: #22509B; }
+  50% { border-top-color: #4B53B0; }
+  100% { border-top-color: #7457C5; }
+}
+
+.preloader-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  font-family: myFont;
+  color: white;
+}
+
+/* Features Section */
+#features {
+    background-color: transparent; /* Background color for the features section */
+    padding: 100px 0; /* Adjust as needed */
+    text-align: center;
+    margin-top: -50px; /* Adjust the margin-top to move the features section closer to the About section */
+}
+
+.features-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 50px; /* Adjust spacing between features */
+}
+
+.feature {
+    width: 90%; /* Adjust width of each feature */
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5); /* Background color for each feature */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+}
+
+.feature i {
+    font-size: 48px; /* Adjust icon size */
+    color: #007bff; /* Icon color */
+}
+
+.container h2 {
+  font-size: 40px;
+  color: black;
+}
+
+.feature h3 {
+    margin-top: 20px; /* Adjust spacing between icon and heading */
+    font-size: 24px;
+    color: black; /* Heading color */
+}
+
+.feature p {
+    margin-top: 20px; /* Adjust spacing between heading and description */
+    font-size: 16px;
+    color: black; /* Description color */
+}
+
+.features-section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Teks berjalan */
+/* Teks berjalan */
+.marquee {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px 0;
+    text-align: center;
+    color: black;
+    position: relative;
+    top: 70px;
+    font-family: myFont;
+    font-weight: bold;
+}
+
+.marquee-content {
+    white-space: nowrap; /* Mencegah teks berjalan wrap */
+    overflow: hidden; /* Mencegah teks berjalan keluar dari area marquee */
+    animation: marquee 5s linear infinite; /* Animasi teks berjalan */
+}
+
+@media (max-width: 768px) {
+    .features-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Menengahkan item secara vertikal */
+        justify-content: center; /* Menengahkan item secara horizontal */
+    }
+
+    .feature-box {
+        width: auto; /* Menyesuaikan lebar berdasarkan konten */
+        max-width: 80%; /* Maksimal lebar box, bisa disesuaikan */
+        flex: 1; /* Memberi flexibilitas */
+        margin: 10px 0; /* Memberikan sedikit ruang antar box */
+        padding: 20px; /* Padding untuk estetika */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .feature-box {
+        width: 100%; /* Melebarkan box agar memenuhi lebar container-nya pada layar kecil */
+        max-width: none; /* Menghapus batasan lebar maksimum */
+        margin-bottom: 10px;
+        margin: 0; /* Menghapus margin yang diberikan sebelumnya */
+        padding: 10px; /* Mengurangi padding untuk tampilan yang lebih sempit */
+        margin-bottom: 20px;
+    }
+}
+
